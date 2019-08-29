@@ -1,0 +1,63 @@
+<html>
+
+<head>
+<title>Scroll</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+body {
+	background-color: #9933ff;
+}
+
+.form-control {
+	margin-top: 200px;
+	width: 60%;
+}
+
+ .panel, .form-control {
+			padding: 10px;	
+			border: 4px solid white;
+			box-shadow: 6px 4px 18px black;
+		}
+
+</style>
+
+<script type="text/javascript">
+
+	count = 0;
+	function Load() {
+		setInterval(anim,90);		
+	}
+
+	function anim() {
+
+		count++;
+		if (count>=100) {
+			count = 0;
+		};
+		document.getElementById("range").value = count;
+		
+	}
+
+</script>
+
+</head>
+
+<body onload="Load()">
+	<div align="center" class="container">
+		<h1  class="panel panel-default" style="color: #9933ff;">ANIMATING RANGE</h1><br><br>
+
+		<input align="center" class="form-control" id="range" type="range">
+	</div>
+	
+
+</body>
+
+</hmtl>

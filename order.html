@@ -1,0 +1,178 @@
+<!doctype html>
+<hmtl>
+<head>
+	
+	<title>Welcome</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+body {
+	background-color:#9933ff;
+}
+
+h1{
+	color: #ffffff;
+}
+
+h2{
+	color: #ffffff;
+}
+
+
+label{
+	color: #ffffff;
+}
+
+
+.well, .panel, .form-control, .btn{
+			padding: 10px;	
+			box-shadow: 6px 4px 18px black;
+		}
+.row {
+    padding-left: 15px;
+    margin-left: 300px;
+}
+</style>
+
+<script>
+	
+price = 0;
+
+function sel1() {
+
+	var items = document.getElementById('items').value;
+
+	items+="\n"+document.getElementById('major').value;
+
+	var s = document.getElementById('major').value.toString();
+
+	price += parseInt(s.substring(s.indexOf('>')+1));
+
+	console.log(price);
+
+	document.getElementById('items').value = items;
+
+}
+
+function sel2() {
+
+	var items = document.getElementById('items').value;
+
+	items+="\n"+document.getElementById('starter').value;
+
+	var s = document.getElementById('starter').value.toString();
+
+
+	price += parseInt(s.substring(s.indexOf('>')+1));
+	console.log(price);
+
+
+	document.getElementById('items').value = items;
+
+}
+
+function sel3() {
+
+	var items = document.getElementById('items').value;
+
+	if (document.getElementById('misc').value != "NONE") {
+		items+="\n"+document.getElementById('misc').value;	
+		var s = document.getElementById('misc').value.toString();
+
+	price += parseInt(s.substring(s.indexOf('>')+1));
+		console.log(price);
+
+	}
+
+	document.getElementById('items').value = items;
+
+}
+
+function Clear() {
+	document.getElementById('items').value = "";
+	console.log(document.getElementById('items').value);
+
+
+}
+
+function order() {
+	
+	console.log(price);
+
+	document.getElementById('price').innerHTML = "Total price is <strong>"+ price+"</strong>";
+
+
+}
+
+</script> 
+</head>
+<body>
+
+
+<div  class="container" align="center">
+	<h1 align="center" class="panel panel-heading" style="color: #9933ff;"><strong>FOOD ORDER</strong></h1>
+
+<div class="row container-fluid" align="center">
+	<div class="col-sm-4" >
+		<h2> MAJOR DISHES </h2>
+			<select class="well" id="major" multiple  onchange ="sel1()">
+				<option value="MC-BURGER -> 80" >MC-BURGER -> 80</option>
+				<option value="FISH FILLETS -> 90">FISH FILLETS -> 90</option>
+				<option value="CHICKEN BURGER -> 80">CHICKEN BURGER -> 80</option>
+				<option value="VEG BURGER -> 80">VEG BURGER -> 80</option>
+
+			</select>
+	</div>
+
+	<div class="col-sm-4">
+		<h2> STARTERS </h2>
+			<select class="well" id="starter" multiple onchange ="sel2()">
+				<option value="FRENCH FRIES -> 60">FRENCH FRIES -> 60</option>
+				<option value="NUGGETS -> 50">NUGGETS -> 50</option>
+				<option value="SPRING ROLL -> 70">SPRING ROLL -> 70</option>
+
+			</select>
+	</div>
+ 
+	</div>
+<br/><br/>
+	<div>
+		<h2> MICSELLANEOUS </h2>
+			<select class="well well-sm" id="misc" onclick ="sel3()">
+				<option value="NONE">NONE</option>
+				<option value="MILK SHAKE -> 50">MILK SHAKE -> 50</option>
+				<option value="BANANA SHAKE -> 50">BANANA SHAKE -> 50</option>
+				<option value="BUTTER SCOTCH-> 70">BUTTER SCOTCH-> 70</option>
+
+			</select>
+	</div>
+
+
+<br/><br/>
+	
+	<textarea id="items" class="form-control" rows="8" cols='15' style="width: 70%"></textarea>
+
+<br/>
+
+<h2 id="price"></h2>
+
+<br/>
+<button onclick="order()" style="margin-right: 15px; margin-bottom: 10px;" class="btn btn-success">ORDER</button>
+<button onclick="Clear()" style="margin-bottom: 10px" class="btn btn-warning">CLEAR</button>
+
+
+
+</div>
+
+</body>
+
+</html>
+

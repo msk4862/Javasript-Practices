@@ -1,0 +1,114 @@
+<html>
+<head>
+	<title>USER FORM</title>
+
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style>
+
+body {
+	background-color:#9201FF;
+}
+
+h2{
+	color: #ffffff;
+}
+
+h3{
+	color: #ffffff;
+}
+
+label {
+	color: #ffffff;
+	font-size: 20px;
+}
+
+
+input, .form-control, .panel {
+			padding: 10px;	
+			border: 4px solid white;
+			box-shadow: 6px 4px 18px black;
+		}
+
+</style>
+
+
+<script type="text/javascript">
+	
+function check(form) {
+	var rollno = form.elements[0].value;
+	var name = form.elements[1].value;
+	var date = form.elements[2].value;
+
+		// document.write("Invalid Number" +isNaN(rollno) + rollno.length);
+		//document.getElementById("rollN").innertHTML = " Roll Number";
+
+	if (!isNaN(rollno) || rollno.length !=7) {
+		//document.getElementById("rollN").innertHTML = "Invalid Roll Number";
+		document.write("Invalid Roll Number<br/>");
+	}
+	else{
+		document.write("Valid Roll Number<br/>");
+
+	}
+
+	if ((typeof name) != "String" && name=="") {
+		//document.getElementById("name").innertHTML = "Invalid Roll Number";
+		document.write("Invalid Name<br/>");
+
+	}
+	else{
+			document.write("Valid Name" + "<br/>");
+
+		}
+
+
+		var DAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satarday"]
+
+		document.write(date +"<br/>");
+		var day = (new Date(date)).getDay();
+		document.write("DAY: " + DAYS[day] +"<br/>");
+
+
+
+
+	//Console.log(rollno);
+}
+
+</script>
+
+</head>
+
+<body align="center">
+
+<div align='center' class="container">
+		<h1 class="panel panel-default" style="color: #9933ff;padding: 10px">FORM</h1><br><br>
+
+<br/><br/><br/>
+	<form class="form">
+		<label>Roll No:</label>
+		<input type="text" required="true" style="width: 50%" class="form-control" required><br/><br/>
+
+
+		<label>Name:</label>
+		<input type="text" id="name" class="form-control" style="width: 50%" required><br/><br/>
+
+		<label>Date:</label>
+		<input type="date" style="width: 50%" id="dob" class="form-control" required><br/><br/><br/>
+
+		<input type="button" class="btn btn-success" id="sub" value="SUBMIT" onclick="check(this.form)">
+	</form>
+	
+</div >
+
+
+</body>
+
+</html>

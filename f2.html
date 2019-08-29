@@ -1,0 +1,71 @@
+<!doctype html>
+<hmtl>
+<head>
+	
+	<title>Welcome</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+body {
+	background-color:#9933ff;
+}
+
+h1{
+	color: #ffffff;
+}
+
+h3{
+	color: #ffffff;
+}
+
+
+label{
+	color: #ffffff;
+}
+
+input, .panel {
+			padding: 10px;	
+			border: 4px solid white;
+			box-shadow: 6px 4px 18px black;
+		}
+</style>
+
+<script>
+	
+function welcome() {
+	var n = document.getElementById('name').value.toUpperCase();
+	window.alert("HELLO " + n + "!");
+}
+
+
+</script>
+
+</head>
+<body>
+
+
+
+<div align="center" class="container">
+
+	<h1 align="center" class="panel panel-heading" style="color: #9933ff;"><strong>Alert Test</strong></h1>
+
+<br><br>
+	<label>NAME:</label><br>
+	
+		<input type="text" id="name"></br></br>		
+	
+	<br>
+	<input type='button' class="btn btn-success" onclick="welcome()" value="SUBMIT">
+
+</div>
+</body>
+
+</html>
+

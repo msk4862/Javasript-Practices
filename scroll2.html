@@ -1,0 +1,88 @@
+<html>
+
+<head>
+<title>Scroll</title>
+
+<style type="text/css">
+
+div {
+    border-style: solid;
+    border-width: 7px;
+    border-color: black;
+    background-color: #aa33ff;
+     border-radius: 10px;
+
+	margin-top: -250px;
+  	margin-left: -250px;
+    position: fixed;
+
+     height: 500px;
+     width: 500px;
+
+     top: 50%;
+     left: 50%;
+
+
+
+}
+
+body {
+	background-color: #9933ff;
+}
+
+img {
+	box-shadow: 6px 4px 18px black;
+
+	border-radius: 80px;
+}
+#container {
+	position: relative;
+	padding: 10px;	
+	border: 8px solid white;
+	box-shadow: 6px 4px 18px black;
+
+}
+</style>
+
+<script type="text/javascript">
+
+	count =0;
+	sign = 1;
+
+	function Load() {
+		setInterval(moveRight,90);		
+	}
+
+
+	function moveRight() {
+
+		
+
+		if ((count+document.getElementById("img").width) >= document.getElementById("container").clientWidth || count <0) {
+			sign = sign*-1;	
+
+		}
+	
+		count += sign*5;
+		console.log(""+document.getElementById("container").clientWidth);
+
+		document.getElementById("img").style.transform = "rotate("+count+"deg)";
+
+		document.getElementById("img").style.marginLeft = ""+count+"px";
+		document.getElementById("img").style.marginTop = ""+count+"px";
+	}
+
+</script>
+
+</head>
+
+<body onload='Load()' >
+
+<div id="container">
+
+
+	<img id="img" src="yy.png" hight="100" width="100">
+</div>
+</body>
+
+</hmtl>

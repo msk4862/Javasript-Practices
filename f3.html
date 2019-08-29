@@ -1,0 +1,84 @@
+<!doctype html>
+<hmtl>
+<head>
+	
+	<title>Welcome</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+<style>
+
+body {
+	background-color:#9933ff;
+}
+
+h1{
+	color: #ffffff;
+}
+
+h3{
+	color: #ffffff;
+}
+
+
+label{
+	color: #ffffff;
+}
+
+input, .panel {
+			padding: 10px;	
+			border: 4px solid white;
+			box-shadow: 6px 4px 18px black;
+		}
+
+</style>
+
+<script>
+		 chances = 3;
+
+function welcome() {
+
+
+	var n = document.getElementById('ans').value;
+	if (n== 1) {
+		window.alert("COREECT");
+	}
+	else {
+		if (chances > 0) {
+			chances--;
+			window.alert("INCORRECT!!");
+		}
+		else{
+			window.alert("CHANCES OVER!!\nSTART AGAIN");
+
+		}
+	}
+}
+
+
+</script>
+
+</head>
+<body >
+
+
+
+<div align="center" class="container" >
+	<h1 class="panel panel-default" style="color: #9933ff;margin-top: 20px;padding: 10px">SOLVE</h1><br><br>
+	<h2 style="color: #fff;">3+8-2*5 = </h2>
+	<input type="text" id="ans" ></br></br>
+
+	<input type='button' class="btn btn-success" onclick="welcome()" value="SUBMIT">
+
+</div>
+</body>
+
+</html>
+

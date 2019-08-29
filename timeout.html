@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Timeout</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<style type="text/css">
+		body {
+			background-color: #9933ff;
+		}
+
+		
+		h1 {
+			color: #fff;
+		}
+
+ 		input, .panel {
+ 			font-size: 40px;
+			padding: 10px;	
+			border: 4px solid white;
+			box-shadow: 6px 4px 18px black;
+		}
+	</style> 
+
+	<script type="text/javascript">
+		function change() {
+			setTimeout(changeColor, 3000);
+			document.getElementById("info").innerHTML = "<small style='color: white;'>Changing...</small>";
+		}
+
+		function changeColor() {
+			document.getElementById("text").style.color = "black";
+			document.getElementById("info").innerHTML = "<small style='color: white;'>Done!</small>";
+
+		}
+	</script>
+
+</head>
+<body class="container" align="center">
+
+		<h1 align="center" class="panel panel-heading" style="color: #9933ff;"><strong>setTimeout Test</strong></h1>
+
+	<br><br>
+
+		<h1 id="text">Click to change my color</h1>
+		<br>
+		<h3 id="info"></h3>
+
+  <input type="button" type="button" class="btn btn-success" onclick="change()" value="CLICK ME !">
+</body>
+</html>

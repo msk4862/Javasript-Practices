@@ -1,0 +1,108 @@
+<!doctype html>
+<hmtl>
+<head>
+	
+	<title>Welcome</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style>
+
+body {
+	background-color:#9933ff;
+}
+
+h1, h3, label, ul{
+	color: #ffffff;
+}
+
+
+.radio {
+	margin-left: 210px;
+}
+
+.form-control {
+			padding: 10px;	
+			border: 4px solid white;
+			box-shadow: 6px 4px 18px black;
+		}
+</style>
+
+<script>
+	
+function opration() {
+
+	var double =  document.forms[0].elements[1].checked;
+	var square =  document.forms[0].elements[2].checked;
+
+		var val1 = document.forms[0].elements[0].value;
+		var val2 = document.forms[0].elements[3].value;
+
+	if (double) {
+
+		if (val1 != "") {
+			document.forms[0].elements[3].value = parseInt(val1) *2;
+		
+		}
+		else{
+						console.log(val2);
+
+			document.forms[0].elements[0].value = parseFloat(val2)/2;
+		}
+
+	}
+	else if (square){
+		if (val1 != "") {
+			document.forms[0].elements[3].value = parseInt(val1)*parseInt(val1);
+		}
+		else{
+			var val = parseInt(document.forms[0].elements[3].value);
+			document.forms[0].elements[0].value = Math.sqrt(parseInt(val2));
+		}
+	}
+}
+
+</script>
+
+</head>
+<body>
+
+
+<div class="container">
+
+<form class="form-horizontal">
+
+	<br>
+	<br>
+	<br>
+	<label class="control-label col-sm-2">Value:</label>
+	<div class="col-sm-10">
+			<input type="text" class="form-control" name="value">
+	</div>
+
+	<br><br><br>
+	<div class="radio">
+		<label><input type="radio" name ="op" id ="double" onclick ="opration()" >DOUBLE</label><br>
+		<label><input type="radio" name="op" id="squares" onclick ="opration()">SQAURE</label>
+	</div>
+
+	<br><br>
+	<label class="control-label col-sm-2">RESULT: </label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" name="res">	
+	</div>
+
+</form>
+
+</div>
+
+
+</body>
+
+</html>
+
